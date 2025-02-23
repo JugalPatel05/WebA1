@@ -1,38 +1,176 @@
-.App {
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
   text-align: center;
+  margin-top: 0;
+  font-size: 2.5rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h2 {
+  font-size: 1.5rem;
+  color: #333;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Search Container */
+.App-search-container {
+  width: 80%;
+  max-width: 900px;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.App-search-input {
+  width: 75%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.App-search-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #61dafb;
   color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.App-search-button:hover {
+  background-color: #4fa3e6;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Main Content Layout (Two Columns) */
+.App-content {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  max-width: 1200px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Left Column - Posts Section */
+.App-posts {
+  flex: 2;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-right: 20px;
+  height: 60vh;
+  overflow-y: scroll;
+}
+
+.App-posts h2 {
+  margin-top: 0;
+  font-size: 20px;
+  color: #282c34;
+}
+
+.App-posts ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.App-posts li {
+  padding: 12px;
+  margin: 8px 0;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.App-posts li:hover {
+  background-color: #e1e1e1;
+}
+
+/* Right Column - Favorites Section */
+.App-favorites {
+  flex: 1;
+  padding: 15px;
+  background-color: #f1f9ff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: 60vh;
+  overflow-y: scroll;
+}
+
+.App-favorites h2 {
+  color: #0077b6;
+  margin-top: 0;
+}
+
+.App-favorites ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.App-favorites li {
+  padding: 12px;
+  margin: 8px 0;
+  background-color: #d9f7ff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.App-favorites li:hover {
+  background-color: #bce4f8;
+}
+
+/* Button Styles */
+button {
+  padding: 6px 12px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Media Queries for Smaller Screens */
+@media (max-width: 768px) {
+  .App-content {
+    flex-direction: column;
+    align-items: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  .App-posts, .App-favorites {
+    width: 90%;
+    margin: 10px 0;
+  }
+
+  .App-search-container {
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .App-search-input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .App-search-button {
+    width: 100%;
   }
 }
